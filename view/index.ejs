@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>url_bin</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div>
+        <h1>url_bin</h1>
+    </div>
+    <div>
+        <p>入力してください</p>
+        <div>
+            <p>追加</p>
+            <form action="/" method="POST">
+                <label for="titleee">タイトル</label>
+                <input type="text" id="titleee" name="title">
+                <label for="urleee">url</label>
+                <input type="text" id="urleee" name="url">
+                <input type="submit" value="保存">
+            </form>
+        </div>
+        <div><a href="/del">削除する</a></div>
+    </div>
+    <div>
+        <!--ここにテンプレートを埋め込む/リストとしてobject(オブジェクトを要素とする配列)のキー(title)・バリュー(value)を並べて表示-->
+        <% for(let i = 0;i < obj.length;i++){ %>
+            <div>
+                <p>
+                    title:
+                    <%= obj[i].title %>
+                   url:
+                    <a href="<%= obj[i].url %>"><%= obj[i].url %></a>
+                    <a href="/delete/:<% i %>">  :削除</a><!-- :忘れ -->
+                </p>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>

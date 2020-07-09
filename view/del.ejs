@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>url_bin</title>
+</head>
+<body>
+    <div>
+        <h1>url_bin</h1>
+        <p>消去：クリックしてください</p>
+        <a href="/">追加する</a>
+    </div>
+    </form>
+    <div>
+            <!--ここにテンプレートを埋め込む/リストとしてobject(オブジェクトを要素とする配列)のキー(title)・バリュー(value)を並べて表示-->
+            <% for(var i = 0;i < obj2.length;i++){ %>
+                <div>
+                    <p>
+                        title:
+                        <%= obj2[i].title %>
+                        url:
+                        <%= obj2[i].url %>
+                        <a href="/delete/:<% i %>">削除</a><!-- :忘れ -->
+                    </p>
+                </div>
+            <% } %>
+        </form>
+    </div>
+</body>
+</html>
